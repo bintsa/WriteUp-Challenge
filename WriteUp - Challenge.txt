@@ -1,0 +1,36 @@
+--- ROOT ME ----
+--FTP Authentification
+On démarre le challenge, puis on obtient le fichier ch1.cpac. On l'ouvre et on lit 
+la colonne Info. Cette colonne contient des informations sur les paquets de données 
+qui ont été capturés. En examinant cette colonne, on trouve facilement sur la ligne 
+11 le mot de passe du challenge qui est mentionné sous la forme 'Request: pass *****'.
+
+--TELNET Authentification
+On démarre le challenge, puis on obtient le fichier ch2.cpac. On l'ouvre et on fait 
+un clic droit sur l'un des paquets de protocole Telnet, on sélectionne 'Suivre' puis 
+'Flux TCP'. Une fois que la fenêtre s'ouvre, le mot de passe du challenge se trouve 
+dedans sous la forme 'password: ****'.
+
+--Authentification twitter
+on démarre le challenge, puis on obtient le fichier ch3.pcap. On l'ouvre et on fait 
+un clic droit sur le seul paquet dedans , sélectionner "suivre" puis "flux HTTP". 
+Une fois que la fenêtre s'ouvre, on trouve "Basic dXNlcnRlc3Q6cGFzc3dvcmQ="qui est 
+une chaîne de caractères en base 64 et on copie "dXNlcnRlc3Q6cGFzc3dvcmQ=" dans le 
+décodeur Base64. Ensuite, on le décode et le mot de passe du challenge sera affiché.
+
+--ETHERNET Trame
+On démarre le challenge et on accède à un nouvel onglet contenant des codes
+en hexadécimal. On copie ce code en hexadécimal sur un site de conversion, 
+puis on convertit ce code en une chaîne de caractères en base 64. 
+Ensuite, on copie cette chaîne de caractères dans un décodeur Base64 pour la 
+convertir en texte, et le mot de passe du challenge sera affiché.
+
+--BLUETOOTH - Fichier inconnu
+On démarre le challenge, puis on obtient le fichier ch18.bin, on l'ouvre avec 
+wireshark, il y a 'wireless' en haut et on le clique , puis on clique sur 
+équipements bluetooth. Une fenêtre s'ouvre et on y trouve l'adresse MAC et le nom 
+du téléphone. On copie l'adresse MAC et le nom du téléphone. et on les colle sur le
+site https://www.sha1.fr/ pour les décoder. Le code que le site renvoie sera la 
+mot de passe du challenge.
+
+                                                                                                                                                               
